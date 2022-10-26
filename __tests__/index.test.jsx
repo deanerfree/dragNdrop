@@ -4,23 +4,7 @@ import Home from '../pages/index'
 import '@testing-library/jest-dom'
 import UploadFile from '../components/UploadFile'
 
-const mockData = {fileList:[]}
-
-
-const mockData2 =  {fileList:[{
-  id:0, 
-  name: "file1.las",
-  size:574842,
-  type:""},
-  {
-    id:1, 
-    name: "file2.las",
-    size:574842,
-    type:""}]}
-
-const dispatch= () => {
-  console.log("yup")
-}
+import {mockData, mockData2, dispatch} from "../mockData/helper"
 
 describe('Home', () => {
   it('renders a div that says organizer', () => {
@@ -68,11 +52,11 @@ describe('Checking the functionality of the UploadFile component', ()=>{
 
 describe('useReducer test', ()=>{
   it('Adds item to list', ()=>{
-    const container = render(<Home />)
+    const container = render(<UploadFile data={mockData} dispatch={dispatch} />)
     // expect(screen.getByText((content, element) =>content.startsWith('UploadImage')))
   })
   it('Removes item from list', ()=>{
-    const container = render(<Home />)
+    const container = render(<UploadFile data={mockData2} dispatch={dispatch} />)
     // expect(screen.getByText((content, element) =>content.startsWith('UploadImage')))
   })
 })
