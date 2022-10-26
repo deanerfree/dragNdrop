@@ -10,7 +10,7 @@ export default function Home() {
 	})
 	return (
 		<div className={styles.container}>
-			<span>The organizer</span>
+			<span>The Drag and Drop bit</span>
 			<div>
 				<UploadFile data={data} dispatch={dispatch} />
 			</div>
